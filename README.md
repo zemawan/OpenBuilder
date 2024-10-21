@@ -3,7 +3,7 @@ OpenBuilder is an apk file builder directly on your android device without a com
 
 # Thanks
 - Maximoff for making ZipAlign and AAPT binaries publicly available for all architectures. ( https://github.com/Maximoff )
-- Codyi96 for xml2axml. ( https://github.com/codyi96/xml2axml ) 
+- Codyi96 for xml2axml. ( https://github.com/codyi96/xml2axml )
 
 # Instructions for replacing the apk template
 - Create a new apk file in any development environment, then copy it, open it as a Zip archive and extract AndroidManifest.xml .
