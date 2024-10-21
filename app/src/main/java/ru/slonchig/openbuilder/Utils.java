@@ -12,6 +12,10 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.Settings;
 import android.widget.Toast;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -66,6 +70,30 @@ public class Utils {
 
         inputStream.close();
         fileOutputStream.close();
+    }
+
+    public void resize(String path, String outputPath, int width, int height) {
+        Bitmap originalBitmap = BitmapFactory.decodeFile(path);
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(originalBitmap, width, height, true);
+        saveImage(resizedBitmap, outputPath);
+    }
+
+    private void saveImage(Bitmap bitmap, String outputPath) {
+        FileOutputStream out = null;
+        try {
+            out = new FileOutputStream(outputPath);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void newToast(Context context, String log) {
