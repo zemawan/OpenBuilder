@@ -35,28 +35,6 @@ public class TaskManager {
         }
     }
 
-    public int runBuildJarTask() {
-        JarTask jarTask = new JarTask();
-
-        try {
-            jarTask.buildClasses(context, packageName, path);
-            return 0;
-        } catch (Exception e) {
-            return 1;
-        }
-    }
-
-    public int runBuildDexTask() {
-        DexTask dexTask = new DexTask();
-
-        try {
-            dexTask.compileDex(path);
-            return 0;
-        } catch (Exception e) {
-            return 1;
-        }
-    }
-
     public int runSignTask(String path) {
         SignTask signTask = new SignTask(path, path + File.separator + "testkey.pk8");
         String result = signTask.sign();
