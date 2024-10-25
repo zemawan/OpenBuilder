@@ -52,7 +52,6 @@ public class SignTask {
             builder.setV1SigningEnabled(true);
             builder.setV2SigningEnabled(true);
             builder.setV3SigningEnabled(true);
-            builder.setV4SigningEnabled(true);
 
             builder.build().sign();
 
