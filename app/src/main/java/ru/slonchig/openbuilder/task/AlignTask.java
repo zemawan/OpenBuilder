@@ -12,7 +12,6 @@ public class AlignTask {
     }
 
     public boolean align() {
-        ZipAligner.align(path, output, ZipAligner.DEFAULT_LEVEL, true);
-        return ZipAligner.isAligned(output, ZipAligner.DEFAULT_LEVEL, true);
+        return ZipAligner.align(path, output, ZipAligner.DEFAULT_LEVEL, true);
     }
 }
